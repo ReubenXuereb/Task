@@ -22,21 +22,27 @@ public class TaskService {
         this.taskRepository = taskRepository;
     }
 
-    public Task findTaskById(Long id) {
-        Optional<Task> optionalTask = taskRepository.findTaskById(id);
-        return optionalTask.orElse(null);
+    public Task getTask(Long taskId) {
+        Task task = taskRepository.findTaskById(taskId).orElseThrow(() ->
+                        new TaskNotFoundException("Task with id " + taskId + " does not exist!"));
+
+        return task;
     }
 
-    public List<com.example.tipico.Tipico.Model.Task> findAll() {
+    public List<Task> getTasks() {
         return taskRepository.findAll();
     }
 
-    public Task save(Task task) {
-        // Additional business logic/validation can be added here before saving
+    public Task addTask(Task task) {
         return taskRepository.save(task);
     }
 
 
+    public void deleteTask(Long taskId) {
+        //Checks if task exists
+        getTask(taskId);
+        taskRepository.deleteById(taskId);
+    }
 
     public Task updateTask(Long taskId, String description, Long priority) {
 
