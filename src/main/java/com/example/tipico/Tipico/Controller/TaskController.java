@@ -1,5 +1,6 @@
 package com.example.tipico.Tipico.Controller;
 
+import com.example.tipico.Tipico.Exceptions.InvalidTaskException;
 import com.example.tipico.Tipico.Service.TaskService;
 import com.example.tipico.Tipico.Model.Task;
 import org.springframework.http.ResponseEntity;
@@ -21,6 +22,7 @@ public class TaskController {
     public ResponseEntity<Task> getTask(@PathVariable Long taskId) {
         return ResponseEntity.ok(taskService.getTask(taskId));
     }
+
     @GetMapping
     public ResponseEntity<List<Task>> getTasks() {
         return ResponseEntity.ok(taskService.getTasks());
@@ -41,6 +43,11 @@ public class TaskController {
     public ResponseEntity<Task> updateTask(@PathVariable Long taskId,
                                            @RequestParam(required = false) String description,
                                            @RequestParam Long priority) {
+
+        //validation is done in the controller
+        if (description == null || description.isEmpty()) {
+            throw new InvalidTaskException("Description cannot be empty or null");
+        }
 
         Task updatedTaskResult = taskService.updateTask(taskId, description, priority);
         return ResponseEntity.ok(updatedTaskResult);

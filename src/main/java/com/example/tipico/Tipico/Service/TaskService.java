@@ -48,19 +48,10 @@ public class TaskService {
 
         Task task = taskRepository.findTaskById(taskId).orElseThrow(() -> new TaskNotFoundException("Task with id " + taskId + " does not exist!"));
 
-        validateTaskFields(description);
-
         task.setDescription(description);
         task.setPriority(priority);
 
         return taskRepository.save(task);
     }
-
-    private void validateTaskFields(String description) {
-        if (description == null) {
-            throw new InvalidTaskException("Task description is required");
-        }
-    }
-
 
 }
