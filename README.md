@@ -1,9 +1,11 @@
-# Car Trader Project
+# Car Trader Project(WIP)
 
 This project is meant to be a continuation from my task. I'll be showing how to set up a Spring Boot application
 with Postgres and creating relationships between tables. We go through One-to-Many, Many-to-one and One-to-One relationships. Also, this is a good way to practice and get familiar with the Spring Framework. Will also be implementing Spring cloud api and load balancer, Axon and Eureka Discovery.
 
-Diagram of Car Trader Database:![](docs/images/VehicleStatusSystem.io.drawio.png)
+I will be creating an application that is used in a Service Station for car mechanics to keep track of tasks(what needs to be done with the car) of vehicles present in their garage.
+
+(WIP)Diagram of Car Trader Database:![](docs/images/VehicleStatusSystem.io.drawio.png)
 
 ![vehicle status system diagram](docs/VehicleStatusSystem.io.drawio.xml)
 
@@ -45,7 +47,7 @@ Diagram of Car Trader Database:![](docs/images/VehicleStatusSystem.io.drawio.png
     * In applications.properties add your p12 file.
       ![](docs/images/app_prop_p12_file.png)
 
-## Endpoints(Work In Progress)
+## Endpoints(WIP on adding more endpoints)
 * If you are using Postman go to docs -> Tipico_Task.postman_collection.json and import the endpoints.
 
 | Method | Endpoint                                          | Description                                                       |
