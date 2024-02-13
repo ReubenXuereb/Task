@@ -1,7 +1,7 @@
 # Car Trader Project
 
 This project is meant to be a continuation from my task. I'll be showing how to set up a Spring Boot application
-with Postgres and creating relationships between tables. We go through One-to-Many, Many-to-one and One-to-One relationships. Also, this is a good way to practice and get familiar with the Spring Framework.
+with Postgres and creating relationships between tables. We go through One-to-Many, Many-to-one and One-to-One relationships. Also, this is a good way to practice and get familiar with the Spring Framework. Will also be implementing Spring cloud api and load balancer, Axon and Eureka Discovery.
 
 Diagram of Car Trader Database:![](docs/images/VehicleStatusSystem.io.drawio.png)
 
